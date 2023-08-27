@@ -1,16 +1,79 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background-color: #f3f2ea;
+  width: 100vh;
+}
 
 header {
   text-align: center;
 }
+fieldset {
+  width: 70vw;
+  max-width: 550px;
+  margin: 1px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+  background-color: #f0a6ca;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+label {
+  width: 62%;
+  display: flex;
+  justify-content: end;
+  text-align: right;
+  margin-right: 4rem;
+}
+
+span {
+  font-size: 1.09rem;
+}
+
+input {
+  padding: 5px;
+  border-radius: 5px;
+  color: #2f3e46;
+  font-size: 1rem;
+}
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  gap: 20px;
 }
 
 label {
   display: block;
+}
+
+.card {
+  background-color: #a2d2ff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.card p {
+  font-size: 1.25rem;
+}
+
+button {
+  padding: 0.5rem;
+  color: #023047;
+  background-color: #e9c46a;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button:hover {
+  color: #e9c46a;
+  background-color: #023047;
+}
+
+.newBook {
+  margin: 20px;
+  background-color: #d4a373;
 }
