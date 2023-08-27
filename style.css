@@ -3,10 +3,17 @@
 }
 body {
   background-color: #f3f2ea;
-  width: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 header {
+  display: flex;
+  flex-direction: column;
+}
+h1 {
   text-align: center;
 }
 fieldset {
@@ -42,9 +49,11 @@ input {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  display: flex;
   gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 label {
@@ -55,6 +64,7 @@ label {
   background-color: #a2d2ff;
   padding: 2rem;
   border-radius: 10px;
+  min-width: 250px;
 }
 .card p {
   font-size: 1.25rem;
@@ -74,6 +84,6 @@ button:hover {
 }
 
 .newBook {
-  margin: 20px;
+  margin: 20px auto;
   background-color: #d4a373;
 }
