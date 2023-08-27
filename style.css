@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+label {
+  display: block;
+}
