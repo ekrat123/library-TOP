@@ -50,8 +50,17 @@ function getData() {
   return JSON.parse(localStorage.getItem("books"));
 }
 
+/* myLibrary.some(
+  (book) =>
+    book.title === titleInput.value && book.author === authorInput.value
+);*/
+
 function createNewBook() {
-  if (titleInput.value) {
+  let data = getData();
+  if (
+    titleInput.value &&
+    !data.some((item) => item.title === titleInput.value)
+  ) {
     const newBook = new Book(
       titleInput.value,
       authorInput.value,
