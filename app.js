@@ -1,4 +1,4 @@
-const myLibrary = [];
+const myLibrary = getData() || [];
 
 class Book {
   constructor(title, author, pages, read) {
@@ -18,8 +18,10 @@ const isReadInput = document.querySelector("#isRead");
 
 function displayBooks() {
   container.innerHTML = "";
+  let data = getData();
+  console.log(data);
 
-  myLibrary.forEach((book, index) => {
+  data.forEach((book, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
@@ -40,6 +42,14 @@ function displayBooks() {
   });
 }
 
+function updateDataBase() {
+  localStorage.setItem("books", JSON.stringify(myLibrary));
+}
+
+function getData() {
+  return JSON.parse(localStorage.getItem("books"));
+}
+
 function createNewBook() {
   if (titleInput.value) {
     const newBook = new Book(
@@ -49,6 +59,8 @@ function createNewBook() {
       isReadInput.value
     );
     myLibrary.push(newBook);
+    updateDataBase();
+
     displayBooks();
     titleInput.value = "";
     authorInput.value = "";
@@ -63,6 +75,7 @@ function removeBook(e) {
   if (e.target.classList.contains("remove-book")) {
     const index = e.target.getAttribute("data-index");
     myLibrary.splice(index, 1);
+    updateDataBase();
     displayBooks();
   }
 }
@@ -73,8 +86,11 @@ function updateBook(e) {
   if (e.target.classList.contains("toggle-read")) {
     const index = e.target.getAttribute("data-index");
     myLibrary[index].read = myLibrary[index].read === "yes" ? "no" : "yes";
+    updateDataBase();
     displayBooks();
   }
 }
 
 container.addEventListener("click", updateBook);
+
+displayBooks();
