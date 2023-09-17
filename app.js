@@ -19,7 +19,6 @@ const isReadInput = document.querySelector("#isRead");
 function displayBooks() {
   container.innerHTML = "";
   let data = getData();
-  console.log(data);
 
   data.forEach((book, index) => {
     const card = document.createElement("div");
@@ -49,11 +48,6 @@ function updateDataBase() {
 function getData() {
   return JSON.parse(localStorage.getItem("books"));
 }
-
-/* myLibrary.some(
-  (book) =>
-    book.title === titleInput.value && book.author === authorInput.value
-);*/
 
 function createNewBook() {
   let data = getData();
