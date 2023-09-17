@@ -50,10 +50,9 @@ function getData() {
 }
 
 function createNewBook() {
-  let data = getData();
   if (
     titleInput.value &&
-    !data.some((item) => item.title === titleInput.value)
+    !myLibrary.some((book) => book.title === titleInput.value)
   ) {
     const newBook = new Book(
       titleInput.value,
