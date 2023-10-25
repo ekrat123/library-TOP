@@ -17,7 +17,7 @@ h1 {
   text-align: center;
 }
 fieldset {
-  width: 70vw;
+  min-width: 340px;
   max-width: 550px;
   margin: 1px auto;
   display: flex;
@@ -30,15 +30,16 @@ fieldset {
   align-items: center;
 }
 label {
-  width: 62%;
   display: flex;
-  justify-content: end;
-  text-align: right;
-  margin-right: 4rem;
+  width: 100%;
+  margin: 1px auto;
+  justify-content: center;
 }
 
 span {
   font-size: 1.09rem;
+  display: inline-block;
+  width: 30%;
 }
 
 input {
